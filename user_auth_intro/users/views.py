@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect, render
@@ -5,6 +6,7 @@ from django.urls import reverse
 
 
 # Create your views here.
+@login_required
 def dashboard(request):
     return render(request, "users/dashboard.html")
 
