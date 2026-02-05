@@ -8,8 +8,9 @@ def profile_redirect(request):
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("accounts/profile/", profile_redirect),   # 👈 ADD THIS
-    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/profile/", profile_redirect),   
+    path("accounts/login/", views.custom_login, name="login"),
+    path("accounts/logout/", views.custom_logout, name="logout"),
     path("dashboard/", views.dashboard, name="dashboard"),
     path("sign_up/", views.sign_up, name="sign_up"),
 ]
